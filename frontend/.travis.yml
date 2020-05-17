@@ -1,0 +1,11 @@
+language: generic
+
+sudo: required 
+services: 
+  - docker 
+
+before_install:
+  - docker build -t guohaoyu110/docker_kubernetes_tour -f Dockerfile.dev .  
+  
+script:
+  - docker run -e CI=true guohaoyu110/docker_kubernetes_tour npm run test 
