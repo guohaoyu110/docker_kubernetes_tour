@@ -4,7 +4,6 @@ metadata:
   name: client-pod
   labels:
     component: web
-    # tier: frontend
 spec:
   containers:
     - name: client
