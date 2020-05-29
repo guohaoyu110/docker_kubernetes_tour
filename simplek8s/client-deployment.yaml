@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+spec:
+  replicas: 5
+  # scale up
+  # create 5 parts, each create different such parts
+  selector:
+    matchLabels:
+      component: web
+    
+  template:
+    metadata: 
+      labels:
+        component: web
+    spec:
+      containers:
+        - name: client 
+          # image: stephengrider/multi-client
+          image: stephengrider/multi-worker
+          ports:
+            - containerPort: 9999
+
+

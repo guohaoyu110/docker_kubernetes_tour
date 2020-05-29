@@ -7,6 +7,7 @@ metadata:
 spec:
   containers:
     - name: client
-      image: stephengrider/multi-client
+      image: stephengrider/multi-worker
+      # update the image we are going to use
       ports:
         - containerPort: 3000
