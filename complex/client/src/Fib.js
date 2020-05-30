@@ -14,7 +14,10 @@ class Fib extends Component {
   }
 
   async fetchValues() {
-    const values = await axios.get('/api/values/current');
+    const values = await axios.get('/api/values/current:5000');
+    // the difference here is that when we are specifying a port the port can very easily change dependign on the environment 
+    // that we are deploying to one day our API might be hosted on port 5000
+    // 这些port可能经常需要更改
     this.setState({ values: values.data });
   }
 
